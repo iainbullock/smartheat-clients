@@ -30,6 +30,7 @@ class Heatmiser {
             contactable: data.dcb.device_on,
             currentTemperature: data.dcb.built_in_air_temp,
             targetTemperature: data.dcb.set_room_temp,
+            awayMode: data.dcb.away_mode ? 'away' : 'home',
             status: data.dcb.heating_on ? 'on' : 'off'
         };
         this._logger.debug(JSON.stringify(info));
