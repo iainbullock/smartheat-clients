@@ -20,7 +20,7 @@ class Mock {
             contactable: true,
             currentTemperature: 19,
             targetTemperature: this._targetTemperature,
-            awayMode: "unsupported',
+            awayMode: 'unsupported',
             status: this._targetTemperature > 19 ? 'on' : 'off'
         };
     }
@@ -38,7 +38,7 @@ class Mock {
         this._logger.debug(`Setting away_mode: ${mode}...`);
         throw new Error('Away Mode is not currently supported for this device');
     }
-    
+
     async turnWaterOnFor(hours) {
         this._logger.debug(`Boosting water for: ${hours} hours`);
     }

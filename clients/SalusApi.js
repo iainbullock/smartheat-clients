@@ -71,7 +71,7 @@ class SalusApi {
             contactable: !(await this.deviceInfo(307) == 3200),
             currentTemperature: await this.deviceInfo(306) / 100,
             targetTemperature: await this.deviceInfo(307) / 100,
-            awayMode: "unsupported',
+            awayMode: 'unsupported',
             status: (await this.deviceInfo(309) === 1 ? 'on' : 'off')
         };
     }

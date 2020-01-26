@@ -90,7 +90,7 @@ class Salus {
             contactable: !(deviceInfo.CH1currentSetPoint == 32.0),
             currentTemperature: parseFloat(deviceInfo.CH1currentRoomTemp),
             targetTemperature: parseFloat(deviceInfo.CH1currentSetPoint),
-            awayMode: "unsupported',
+            awayMode: 'unsupported',
             status: (deviceInfo.CH1heatOnOffStatus == 1 ? 'on' : 'off')
         };
     }
