@@ -71,6 +71,7 @@ class SalusApi {
             contactable: !(await this.deviceInfo(307) == 3200),
             currentTemperature: await this.deviceInfo(306) / 100,
             targetTemperature: await this.deviceInfo(307) / 100,
+            awayMode: "unsupported',
             status: (await this.deviceInfo(309) === 1 ? 'on' : 'off')
         };
     }
@@ -98,6 +99,11 @@ class SalusApi {
             value2: "1"
         };
         await this.updateDevice(payload);
+    }
+
+    async setAwayMode(mode) {
+        this._logger.debug(`Setting away_mode: ${mode}...`);
+        throw new Error('Away Mode is not currently supported for this device');
     }
 
     async turnWaterOnFor(hours) {

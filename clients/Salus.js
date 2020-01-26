@@ -90,6 +90,7 @@ class Salus {
             contactable: !(deviceInfo.CH1currentSetPoint == 32.0),
             currentTemperature: parseFloat(deviceInfo.CH1currentRoomTemp),
             targetTemperature: parseFloat(deviceInfo.CH1currentSetPoint),
+            awayMode: "unsupported',
             status: (deviceInfo.CH1heatOnOffStatus == 1 ? 'on' : 'off')
         };
     }
@@ -109,6 +110,11 @@ class Salus {
         };
 
         await request.post(`${host}/includes/set.php`, options);
+    }
+
+    async setAwayMode(mode) {
+        this._logger.debug(`Setting away_mode: ${mode}...`);
+        throw new Error('Away Mode is not currently supported for this device');
     }
 
     async turnWaterOnFor(hours) {
