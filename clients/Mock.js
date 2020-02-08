@@ -21,7 +21,8 @@ class Mock {
             currentTemperature: 19,
             targetTemperature: this._targetTemperature,
             awayMode: 'unsupported',
-            status: this._targetTemperature > 19 ? 'on' : 'off'
+            status: this._targetTemperature > 19 ? 'on' : 'off',
+            time: 'unsupported'
         };
     }
 

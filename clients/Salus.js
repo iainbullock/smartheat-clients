@@ -91,7 +91,8 @@ class Salus {
             currentTemperature: parseFloat(deviceInfo.CH1currentRoomTemp),
             targetTemperature: parseFloat(deviceInfo.CH1currentSetPoint),
             awayMode: 'unsupported',
-            status: (deviceInfo.CH1heatOnOffStatus == 1 ? 'on' : 'off')
+            status: (deviceInfo.CH1heatOnOffStatus == 1 ? 'on' : 'off'),
+            time: 'unsupported'
         };
     }
 

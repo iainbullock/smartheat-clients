@@ -72,7 +72,8 @@ class SalusApi {
             currentTemperature: await this.deviceInfo(306) / 100,
             targetTemperature: await this.deviceInfo(307) / 100,
             awayMode: 'unsupported',
-            status: (await this.deviceInfo(309) === 1 ? 'on' : 'off')
+            status: (await this.deviceInfo(309) === 1 ? 'on' : 'off'),
+            time: 'unsupported'
         };
     }
 

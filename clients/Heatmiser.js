@@ -31,7 +31,8 @@ class Heatmiser {
             currentTemperature: data.dcb.built_in_air_temp,
             targetTemperature: data.dcb.set_room_temp,
             awayMode: data.dcb.away_mode ? 'away' : 'home',
-            status: data.dcb.heating_on ? 'on' : 'off'
+            status: data.dcb.heating_on ? 'on' : 'off',
+            time: 'Seven'
         };
         this._logger.debug(JSON.stringify(info));
         return info;
@@ -46,7 +47,7 @@ class Heatmiser {
         };
         await this.writeDevice(dcb);
     }
-    
+
     async setAwayMode(mode) {
         this._logger.debug(`Setting away_mode: ${mode}...`);
         let dcb = {
