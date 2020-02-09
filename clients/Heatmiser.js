@@ -32,7 +32,7 @@ class Heatmiser {
             targetTemperature: data.dcb.set_room_temp,
             awayMode: data.dcb.away_mode ? 'away' : 'home',
             status: data.dcb.heating_on ? 'on' : 'off',
-            time: data.dcb.current_time
+            time: Date.parse(data.dcb.current_time)
         };
         this._logger.debug(JSON.stringify(info));
         return info;
